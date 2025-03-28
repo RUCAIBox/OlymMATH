@@ -4,7 +4,7 @@ This is the official repository for [Challenging the Boundaries of Reasoning: An
 
 This repo contains dataset file and evaluation code.
 
-The dataset is also available now on [HuggingFace](https://huggingface.co/datasets/RUC-AIBOX/OlymMATH) 🤗
+The dataset is also available now on [HuggingFace](https://huggingface.co/datasets/RUC-AIBOX/OlymMATH) 🤗.
 
 ![](./imgs/dataset.png)
 
