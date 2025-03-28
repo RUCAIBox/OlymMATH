@@ -51,5 +51,13 @@ python local_tester.py \
 If you find this helpful in your research, please give a 🌟 to our repo and consider citing
 
 ```
-
+@misc{sun2025challengingboundariesreasoningolympiadlevel,
+      title={Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models},
+      author={Haoxiang Sun and Yingqian Min and Zhipeng Chen and Wayne Xin Zhao and Zheng Liu and Zhongyuan Wang and Lei Fang and Ji-Rong Wen},
+      year={2025},
+      eprint={2503.21380},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2503.21380},
+}
 ```
