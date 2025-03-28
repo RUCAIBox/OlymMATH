@@ -8,6 +8,12 @@ The dataset is also available now on [HuggingFace](https://huggingface.co/datase
 
 ![](./imgs/dataset.png)
 
+## Experiment Results
+
+Please refer to our paper for more detailed results.
+
+![](./imgs/exp.png)
+
 ## Evaluation
 
 We have released code for local evaluation based on [Math-Verify](https://github.com/huggingface/Math-Verify) and [vLLM](https://github.com/vllm-project/vllm). You can follow these steps to evaluate your own model.
