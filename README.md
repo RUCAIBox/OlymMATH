@@ -1,6 +1,6 @@
 # Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models
 
-This is the official repository for [Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models]() by [Haoxiang Sun](https://github.com/CoderBak), Yingqian Min, Zhipeng Chen, Wayne Xin Zhao, Zheng Liu, Zhongyuan Wang, Lei Fang, and Ji-Rong Wen.
+This is the official repository for [Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models](https://arxiv.org/abs/2503.21380) by [Haoxiang Sun](https://github.com/CoderBak), Yingqian Min, Zhipeng Chen, Wayne Xin Zhao, Zheng Liu, Zhongyuan Wang, Lei Fang, and Ji-Rong Wen.
 
 This repo contains dataset file and evaluation code.
 
