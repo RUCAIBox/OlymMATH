@@ -37,40 +37,58 @@ PROMPT_EN = "Please reason step by step, and put your final answer within \\boxe
 
 def extract_boxed(text):
     """
-    Extract content from \boxed{} with support for nested braces
+    Extract content from the last occurrence of \boxed{} with support for nested braces.
     """
     stack = []
-    boxed_contents = []
+    last_boxed_content = None # Store only the last found content
     i = 0
     start_idx = -1
 
     while i < len(text):
-        if text[i : i + 7] == "\\boxed{" and (i == 0 or text[i - 1] != "\\"):
+        # Look for \boxed{ but ensure it's not escaped (\\boxed{)
+        # Check bounds before accessing text[i-1]
+        is_escaped = (i > 0 and text[i - 1] == "\\")
+        if text[i : i + 7] == "\boxed{" and not is_escaped:
+            # If we are starting a new \boxed{ sequence
             if not stack:
                 start_idx = i + 7
             stack.append("{")
             i += 7
-        elif text[i] == "{" and (i == 0 or text[i - 1] != "\\"):
-            stack.append("{")
+        # Look for opening brace { but ensure it's not escaped (\{)
+        elif text[i] == "{" and not (i > 0 and text[i - 1] == "\\"):
+            # Only push to stack if we are already inside a \boxed{
+            if stack:
+                 stack.append("{")
             i += 1
-        elif text[i] == "}" and (i == 0 or text[i - 1] != "\\"):
+        # Look for closing brace } but ensure it's not escaped (\})
+        elif text[i] == "}" and not (i > 0 and text[i - 1] == "\\"):
+            # Only pop from stack if we are inside a \boxed{
             if stack:
                 stack.pop()
+                # If the stack is now empty, we've found the end of a \boxed{ sequence
                 if not stack and start_idx != -1:
-                    boxed_contents.append(text[start_idx:i])
-                    start_idx = -1
+                    # Store the content of this \boxed{}
+                    last_boxed_content = text[start_idx:i]
+                    start_idx = -1 # Reset start index
             i += 1
         else:
             i += 1
 
-    # Fallback to regex if the first method fails
-    if not boxed_contents:
-        pattern = r"\\boxed{((?:[^{}]|{(?:[^{}]|{[^{}]*})*})*?)}"
-        matches = list(re.finditer(pattern, text))
-        if matches:
-            return [matches[-1].group(1)]  # Return the last match
+    # If the stack method found at least one \boxed{}
+    if last_boxed_content is not None:
+        return [last_boxed_content]
 
-    return boxed_contents
+    # Fallback to regex if the stack method found nothing
+    # This regex also finds the last match due to how finditer works with list indexing [-1]
+    pattern = r"\boxed{((?:[^{}]|{(?:[^{}]|{[^{}]*})*})*?)}"
+    matches = list(re.finditer(pattern, text))
+    if matches:
+        # Ensure group(1) exists before accessing
+        match_content = matches[-1].group(1) if len(matches[-1].groups()) > 0 else ""
+        return [match_content]
+
+    # If neither method found anything
+    return []
 
 
 def format_for_math_verify(answer):
