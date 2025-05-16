@@ -4,7 +4,7 @@
 
 - 2025-05-10: We have released the OlymMATH-eval dataset on [HuggingFace](https://huggingface.co/datasets/RUC-AIBOX/OlymMATH-eval) 🤗, together with a data visualization tool OlymMATH-demo, currently available in [HuggingFace Spaces](https://huggingface.co/spaces/RUC-AIBOX/OlymMATH-demo).
 
-- 2025-03-27: We have released the OlymMATH dataset on [HuggingFace](https://huggingface.co/datasets/RUC-AIBOX/OlymMATH) 🤗 and paper is now available on [arXiv](https://arxiv.org/abs/2503.21380).
+- 2025-03-27: We have released the OlymMATH dataset on [HuggingFace](https://huggingface.co/datasets/RUC-AIBOX/OlymMATH) 🤗 and paper is available on [arXiv](https://arxiv.org/abs/2503.21380).
 
 ---
 
