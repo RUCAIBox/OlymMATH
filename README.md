@@ -1,5 +1,7 @@
 # Challenging the Boundaries of Reasoning: An Olympiad-Level Math Benchmark for Large Language Models
 
+![](imgs/fig.png)
+
 ## News
 
 - 2025-05-10: We have released the OlymMATH-eval dataset on [HuggingFace](https://huggingface.co/datasets/RUC-AIBOX/OlymMATH-eval) 🤗, together with a data visualization tool OlymMATH-demo, currently available in [HuggingFace Spaces](https://huggingface.co/spaces/RUC-AIBOX/OlymMATH-demo).
