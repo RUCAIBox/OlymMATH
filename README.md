@@ -34,13 +34,23 @@ We have open-sourced and currently maintain the OlymMATH-demo visualization tool
 
 The tool also includes standard solutions for difficult problems and supports local deployment.
 
+> [!NOTE]
+>
+> This tool downloads approximately 26GB of database files during startup, so when waking up or deploying on HuggingFace Spaces, it requires waiting about 90 seconds to start up (because the data files are automatically deleted after hibernation). If deployed locally, this database file only needs to be downloaded once.
+
 ### Deployment
 
 This Gradio App is actually based on a database which has been pre-uploaded to HuggingFace. Thus, we strongly recommend you choosing to `Duplicate this Space` on HuggingFace Spaces for a better and private experience.
 
 However, you can also choose to run this visualization tool locally, following the steps below.
 
-**TODO: local deployment guidance**
+```text
+git lfs install
+git clone https://huggingface.co/spaces/RUC-AIBOX/OlymMATH-demo
+cd OlymMATH-demo
+pip install -r requirements.txt
+python app.py  # That's it! It will automatically download a ~26GB file using HuggingFace Xet.
+```
 
 ## Evaluation
 
